@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	
+		<!-- Name: Bill Gray Quitalig 
+			 Name: Kushal Parmar	
+		 COMP 1231 Assignment
+		 April 01, 2015
+		-->
+		
+		<meta charset="utf-8">
+		<meta name="description" content="Tutorial page about PHP Cookies">
+		<meta name="keywords" content='assignment,comp1231, php_cookies, $_cookies '>
+		<title>PHP Cookies</title>
+		
+		<style>
+			
+			h2,h1{
+			text-shadow: 2px 2px 3px black;
+			color:#FF9933;
+			}
+			pre{
+			
+			color: #3366FF;
+			}
+		
+		</style>
+		
+	</head>
+	<body>
+
+	<h1>PHP (Hypertext Preprocessor)</h1>
+    
+	<table id="content1">
+      <tr>
+        <td>
+            <img src="images/pic1.png" height="200" width="200" style="float:left;margin:0 5px 0 0;">
+			<h2>What is PHP?</h2>
+			<p>
+			It is a server scripting language which is used to control user-access. It establishes interaction between the users computer or the client
+			with the Web Server. It also collects form data from html pages. Sends and receives cookies.
+			You can create, delete, open, close, read and write files on a data server.  
+			
+			<br>
+			<br>
+			</p>
+        </td>
+      </tr>  
+    </table>
+	<br>
+	<br>
+	<table id="content2">
+      <tr>
+        <td>
+            <img src="images/pic2.jpg" height="200" width="200" style="float:left;margin:0 5px 0 0;">
+			<h2>What are Cookies?</h2>
+			<p>
+			A cookie is often used to identify a user. A cookie is a small file that the server adds on the user's computer. 
+			Each time the same computer requests a page with a browser, it will send the cookie too. With PHP, you can both 
+			create and retrieve cookie values. : cookies are used in forms and other web pages which require you to enter information, 
+			with cookies if the user happens to visit the same website the cookie helps to save time in entering the required information over and over again.
+			
+			<br>
+			<br>
+			</p>
+        </td>
+      </tr>  
+    </table>
+	<br>
+	<br>
+	<table id="content3">
+      <tr>
+        <td>
+            <img src="images/pic3.jpg" height="200" width="200" style="float:left;margin:0 5px 0 0;">
+		</td>
+		<td>	
+			<h2>Myths about Cookies</h2>
+			<p>
+			<b>MYTH</b> 
+			<br>
+				- Cookies are like worms/viruses and can erase user files on their computer.
+			<br>
+				- Cookies are a form of spyware and collects your personal information.
+			<br>
+				- Cookies generate popups and spam and used for ads on a website.
+				
+			</p>
+        </td>
+		<td>
+			<p>
+			<br>
+			<br>
+			<br>
+			<b>FACTS</b> 
+			<br>
+				- Cookies are only data that is sent by the web server, not a program code.
+			<br>
+				- Cookies cannot erase or read information from the user's computer.
+			<br>
+				- Cookies CAN be used to track your viewing habits on a particular site.
+				
+			</p>
+        </td>
+		
+		
+      </tr>  
+    </table>
+	<br>
+	<br>
+	<table id="content4">
+      <tr>
+        <td>
+            <video width="500" height="350" controls>
+			<source src="video/tutorial.mp4" type="video/mp4">
+			</video>
+		</td>
+		<td>
+		
+		<br>
+		<br>
+		<br>
+		<br>
+				<h1> HOW TO RUN PHP CODE USING XAMPP </h1>
+				<br> To Download XAMPP:<a href ="https://www.apachefriends.org/download.html" target="_blank">Click Here!</a>
+		</td>	
+      </tr>  
+    </table>		
+	
+	
+
+	<div id="content5">	
+		<h2>How to code PHP Cookies?</h2>
+			<p>Unlike CSS and JavaScript, PHP can be run separately from html or embedded to html. It is coded using the tag element <b>&lt;&quest;php </b> and ends with <b>&quest;&gt;</b>.
+			Since PHP is server-side scripting it needs a web server before running the code on your web browser. The keyword <b>setcookie()</b> is used to create a cookie and must be written before the html tag.
+			<br>
+			<br>
+			Syntax for <b>setcookie()</b>
+			- setcookie(name,value,expire,path,domain,secure,httponly);
+			<br>
+			<ul>Parameter and description
+			<li><b>name</b> - assigns the name of the cookie(Required)</li>
+			<li><b>value</b> - assigns the value of the cookie(Optional)</li>
+			<li><b>expire</b> - specifies when will the cookie expires. "time()" means the time of creation, "+86400" equals to one day (Optional)</li>
+			<li><b>path</b> - determines the server path for the cookie. "/" means the cookie is available on the entire domain.<br>/php/ means the cookie is available only on the php directory.(Optional)</li>
+			<li><b>domain</b> - specifies the domain for the cookie.(Optional)</li>
+			<li><b>secure</b> - describes if the cookie should be transmitted on secure HTTPS connection. Default value is FALSE.(Optional)</li>
+			<li><b>httponly</b> - describes if the cookie can only be accessible through http protocol only meaning the cookie cannot be modified by scripting language. Default value is FALSE. (Optional)</li>
+			</ul>
+			</p> 
+			
+	</div>			
+	
+	<div id ="content6">
+		<h2>Sample codes</h2>
+			<p>The sample code is run using XAMPP with Apache Web Server.</p>
+	<table>
+     <tr>
+	<td>
+	<h3>PHP Code</h3>
+	<pre class="brush:js;toolbar:false;">
+	
+	&lt;&quest;php
+	&dollar;cookie_name = "user";
+	&dollar;cookie_value = "Cookie Monster";
+		
+	setcookie&lpar;&dollar;cookie_name, &dollar;cookie_value, time&lpar;&rpar;&semi; + &lpar;86400 * 30&rpar;, &quot;/&quot;&rpar;&semi;
+	// 86400 = 1 day
+
+
+	if&lpar;!isset&lpar;&dollar;_COOKIE&lsqb;&dollar;cookie_name&rsqb;&rpar;&rpar; &lcub;
+		echo &quot;Cookie named &apos;&quot; . &dollar;cookie_name . &quot;&apos; is not created!&quot;&semi;
+		&rcub; 
+	else &lcub;
+		echo &quot;Cookie &apos;&quot; . &dollar;cookie_name . &quot;&apos; is created!&lt;br&gt;&quot;&semi;
+		echo &quot;Value is: &quot; . &dollar;_COOKIE&lsqb;&dollar;cookie_name&rsqb;&semi;
+		&rcub;
+	&quest;&gt;
+	
+	</pre>
+	</td>
+		
+	<td>
+	<h3>Ouput</h3>
+		<iframe src="//localhost/assign/cookietest.php" name="iframe2" width="200" height="300"></iframe>		
+	</td>
+	
+	</tr>  
+    </table>
+	<br>
+	<br>
+	</div>
+			
+	</body>
+</html>
